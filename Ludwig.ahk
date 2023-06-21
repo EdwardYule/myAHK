@@ -8,7 +8,10 @@
 
 #SingleInstance Force ;强制单例
 
+;CapsLock键相关功能
 #Include CapsLock.ahk
+;Win键相关功能
+#Include Win.ahk
 
 
 ; ~CapsLock::{
