@@ -10,19 +10,20 @@
 ; &	用于连接两个按键(含鼠标按键) 合并成一个自定义热键.
 
 ; 光标移动控制
-CapsLock & j::Send "{Left}"
-CapsLock & l::Send "{Right}"
-CapsLock & i::Send "{Up}"
-CapsLock & k::Send "{Down}"
-CapsLock & u::Send "^{Left}"
-CapsLock & o::Send "^{Right}"
-CapsLock & n::Send "{Home}"
-CapsLock & m::Send "{End}"
-CapsLock & h::Send "{PgUp}"
-CapsLock & `;::Send "{PgDn}" ; 这里使用`进行转义
-CapsLock & ,::Send "{Up}{Up}{Up}{Up}{Up}"
-CapsLock & .::Send "{Down}{Down}{Down}{Down}{Down}"
-CapsLock & Enter::Send "{End}{Enter}"
+CapsLock & j::Send "{Left}" ;向左
+CapsLock & l::Send "{Right}" ;向右
+CapsLock & i::Send "{Up}" ;向上
+CapsLock & k::Send "{Down}" ;向下
+CapsLock & u::Send "^{Left}" ;向左一个单词
+CapsLock & o::Send "^{Right}" ;向右一个单词
+CapsLock & n::Send "{Home}" ;跳到行首
+CapsLock & m::Send "{End}" ;跳到行末
+CapsLock & h::Send "{PgUp}" ;跳到上一页
+CapsLock & `;::Send "{PgDn}" ; 这里使用`进行转义，跳到下一页
+CapsLock & ,::Send "{Up}{Up}{Up}{Up}{Up}" ;向上5行
+CapsLock & .::Send "{Down}{Down}{Down}{Down}{Down}" ;向下5行
+CapsLock & Enter::Send "{End}{Enter}" ;回车到下一行
+CapsLock & BackSpace::Send "^l{BackSpace}" ;删除整行
 
 #HotIf GetKeyState("CapsLock", "P")
   ; 当大写键按下时，可实现选择控制
