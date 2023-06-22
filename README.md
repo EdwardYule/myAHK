@@ -4,7 +4,7 @@
 
 [点我下载](./SmartBoard.exe)
 
-<a href="./SmartBoard.exe" target="_blank">点我下载</a>
+<a href="./SmartBoard.exe" download>点我下载</a>
 
 ## 开发初衷
 
