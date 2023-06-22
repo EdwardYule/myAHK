@@ -44,3 +44,5 @@
 ; ::btw::{
 ;     MsgBox "You typed btw."
 ; }
+
+; CapsLock & F1::{帮助}
