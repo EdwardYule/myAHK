@@ -2,9 +2,7 @@
 
 ## 下载地址
 
-[点我下载](./SmartBoard.exe)
-
-<a href="./SmartBoard.exe" download>点我下载</a>
+请[在此](./SmartBoard.exe)右键另存为，即可下载软件
 
 ## 开发初衷
 
@@ -29,6 +27,8 @@
 * CapsLock
 
 按住大写键，可以将[IJKL]映射为↑←↓→，[UO]为前/后一个单词，[NM]为Home/End，[,.]为上/下5行，[H;]为PageUp/PageDown
+
+按住大写键，同时按住Alt键，配合上述移动光标功能，即可在移动光标同时选中文本。
 
 ## TO DO
 
