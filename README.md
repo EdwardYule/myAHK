@@ -1,7 +1,10 @@
 # SmartBoard
 
 ## 下载地址
+
 [点我下载](./SmartBoard.exe)
+
+<a href="./SmartBoard.exe" target="_blank">点我下载</a>
 
 ## 开发初衷
 
