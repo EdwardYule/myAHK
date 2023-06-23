@@ -8,6 +8,10 @@
 
 #SingleInstance Force ;强制单例
 
+Info(content){
+  TrayTip content, , "Mute"
+}
+
 ;CapsLock键相关功能，主要负责光标移动，文本选择等文字工作功能
 #Include CapsLock.ahk
 ;Win键相关功能，主要用于增强系统相关功能
@@ -15,6 +19,12 @@
 ;菜单相关
 #Include Menu.ahk
 
+!+^z::{
+  ; Ctrl+Shift+Alt+Z 重载脚本
+  Reload
+  ; win11通知
+  Info("脚本已更新")
+}
 
 ; ~CapsLock::{
 

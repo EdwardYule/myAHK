@@ -1,38 +1,45 @@
-; 托盘相关菜单，貌似没有什么作用
-; IconMenuHandler(ItemName, ItemPos, MyMenu) {
-;     MsgBox "You selected " ItemName " (position " ItemPos ")"
-; }
-; AddIconMenu(MenuName, IconMenuHandler){
-;   A_TrayMenu.Add()
-;   A_TrayMenu.Add(MenuName, IconMenuHandler)
-;   Persistent
-; }
-; AddIconMenu("Item1", IconMenuHandler)
-; -----------------------
-
-; 添加一些菜单项来创建弹出菜单.
-MyMenu := Menu()
-MyMenu.Add "功能开发中，敬请期待", MenuHandler
-; MyMenu.Add "Item 2", MenuHandler
-; MyMenu.Add  ; 添加分隔线.
-
-; ; 添加子菜单到上面的菜单中.
-; Submenu1 := Menu()
-; Submenu1.Add "Item A", MenuHandler
-; Submenu1.Add "Item B", MenuHandler
-
-; ; 创建第一个菜单的子菜单(右箭头指示符). 当用户选择它时会显示第二个菜单.
-; MyMenu.Add "My Submenu", Submenu1
-
-; MyMenu.Add  ; 在子菜单下添加分隔线.
-; MyMenu.Add "Item 3", MenuHandler  ; 在子菜单下添加另一个菜单项.
-
-MenuHandler(Item, *) {
-    ; MsgBox "You selected " Item
+GoToWebSite(Item, *) {
+  ; 官方网站
+  Run "https://github.com/EdwardYule/myAHK"
 }
 
-RCtrl & RAlt::MyMenu.Show
-RAlt & RCtrl::MyMenu.Show
+DoNothing(Item, *){
+}
+OCRHandler(Item, *){
+  Send "#+t"
+}
+ScreenRuler(Item, *){
+  Send "#+m"
+}
+MousePointerCrosshairs(Item, *){
+  Send "#!p"
+}
+AlwaysOnTop(Item, *){
+  Send "#^t"
+}
+
+; 以下是菜单项
+
+PowerToys := Menu()
+PowerToys.Add "置顶", AlwaysOnTop
+PowerToys.Add "OCR", OCRHandler
+PowerToys.Add "屏幕标尺", ScreenRuler
+PowerToys.Add "鼠标指针十字线", MousePointerCrosshairs
+
+SmartMenu := Menu()
+SmartMenu.Add "Power Toys", PowerToys
+SmartMenu.Add
+
+Contact := Menu()
+Contact.Add "个人邮箱: 787322353@qq.com", DoNothing
+Contact.Add "个人QQ: 787322353", DoNothing
+Help := Menu()
+Help.Add "联系作者", Contact
+Help.Add "官方网站", GoToWebSite
+SmartMenu.Add "帮助", Help
+
+RCtrl & RAlt::SmartMenu.Show
+RAlt & RCtrl::SmartMenu.Show
 ; RAlt & RCtrl::AppsKey ;右键功能触摸板可以两指点击实现，触摸板右下方按压也能实现，感觉没太大必要去做了
 
 ; 控制面板
