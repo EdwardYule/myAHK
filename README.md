@@ -4,6 +4,8 @@
 
 请[在此](./SmartBoard.exe)右键另存为，即可下载软件
 
+您也可以自行编译，入口文件为SmartBoard.ahk，使用AHK2开发。
+
 ## 功能介绍
 
 * CapsLock
