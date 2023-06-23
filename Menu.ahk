@@ -12,25 +12,29 @@
 
 ; 添加一些菜单项来创建弹出菜单.
 MyMenu := Menu()
-MyMenu.Add "Item 1", MenuHandler
-MyMenu.Add "Item 2", MenuHandler
-MyMenu.Add  ; 添加分隔线.
+MyMenu.Add "功能开发中，敬请期待", MenuHandler
+; MyMenu.Add "Item 2", MenuHandler
+; MyMenu.Add  ; 添加分隔线.
 
-; 添加子菜单到上面的菜单中.
-Submenu1 := Menu()
-Submenu1.Add "Item A", MenuHandler
-Submenu1.Add "Item B", MenuHandler
+; ; 添加子菜单到上面的菜单中.
+; Submenu1 := Menu()
+; Submenu1.Add "Item A", MenuHandler
+; Submenu1.Add "Item B", MenuHandler
 
-; 创建第一个菜单的子菜单(右箭头指示符). 当用户选择它时会显示第二个菜单.
-MyMenu.Add "My Submenu", Submenu1
+; ; 创建第一个菜单的子菜单(右箭头指示符). 当用户选择它时会显示第二个菜单.
+; MyMenu.Add "My Submenu", Submenu1
 
-MyMenu.Add  ; 在子菜单下添加分隔线.
-MyMenu.Add "Item 3", MenuHandler  ; 在子菜单下添加另一个菜单项.
+; MyMenu.Add  ; 在子菜单下添加分隔线.
+; MyMenu.Add "Item 3", MenuHandler  ; 在子菜单下添加另一个菜单项.
 
 MenuHandler(Item, *) {
-    MsgBox "You selected " Item
+    ; MsgBox "You selected " Item
 }
 
 RCtrl & RAlt::MyMenu.Show
 RAlt & RCtrl::MyMenu.Show
 ; RAlt & RCtrl::AppsKey ;右键功能触摸板可以两指点击实现，触摸板右下方按压也能实现，感觉没太大必要去做了
+
+; 控制面板
+; 清空回收站
+; 便签？

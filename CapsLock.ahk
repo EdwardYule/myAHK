@@ -10,8 +10,8 @@
   ~CapsLock & m::Send "+{End}"
   ~CapsLock & h::Send "+{PgUp}"
   ~CapsLock & `;::Send "+{PgDn}"
-  ~CapsLock & ,::Send "+{Up}+{Up}+{Up}+{Up}+{Up}"
-  ~CapsLock & .::Send "+{Down}+{Down}+{Down}+{Down}+{Down}"
+  ~CapsLock & ,::Send "+{Up 5}"
+  ~CapsLock & .::Send "+{Down 5}"
 #HotIf
 
 #HotIf GetKeyState("CapsLock", "T")
@@ -33,10 +33,27 @@ CapsLock & n::Send "{Home}" ;跳到行首
 CapsLock & m::Send "{End}" ;跳到行末
 CapsLock & h::Send "{PgUp}" ;跳到上一页
 CapsLock & `;::Send "{PgDn}" ; 这里使用`进行转义，跳到下一页
-CapsLock & ,::Send "{Up}{Up}{Up}{Up}{Up}" ;向上5行
-CapsLock & .::Send "{Down}{Down}{Down}{Down}{Down}" ;向下5行
+CapsLock & ,::Send "{Up 5}" ;向上5行
+CapsLock & .::Send "{Down 5}" ;向下5行
 CapsLock & Enter::Send "{End}{Enter}" ;回车到下一行
 CapsLock & BackSpace::Send "^l{BackSpace}" ;删除整行
+
+#HotIf GetKeyState("Shift")
+  ~CapsLock & j::Send "1"
+  ~CapsLock & k::Send "2"
+  ~CapsLock & l::Send "3"
+  ~CapsLock & u::Send "4"
+  ~CapsLock & i::Send "5"
+  ~CapsLock & o::Send "6"
+  ~CapsLock & 7::Send "7"
+  ~CapsLock & 8::Send "8"
+  ~CapsLock & 9::Send "9"
+  ~CapsLock & 0::
+  ~CapsLock & Space::{
+    Send "0"
+  }
+  ~CapsLock & BackSpace::Send "{BackSpace}"
+#HotIf
 
 ; 输入框
 ; 自带的输入框太丑了，能不能搞个漂亮一点的
