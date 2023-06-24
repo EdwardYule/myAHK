@@ -1,4 +1,12 @@
-; #!w::
+; LWin & LAlt::
+; LAlt & LWin::
+; {
+;   Click , , "Left down"
+;   KeyWait "Alt"
+;   KeyWait "#"
+;   Click , , "Left up"
+; }
+
 
 ; MyGui := Gui(, "Title of Window")
 ; MyGui.Opt("+AlwaysOnTop -SysMenu +Owner")  ; +Owner 避免显示任务栏按钮.
