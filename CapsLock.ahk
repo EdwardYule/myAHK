@@ -12,14 +12,36 @@
   ~CapsLock & `;::Send "+{PgDn}"
   ~CapsLock & ,::Send "+{Up 5}"
   ~CapsLock & .::Send "+{Down 5}"
+  ; TODO 这里有个bug，按住CapsLock，然后按住Alt再放开Alt，会触发Alt键，应该不让触发比较好
 #HotIf
 
 #HotIf GetKeyState("CapsLock", "T")
-  ; 当大写键打开时
-  ; 我的笔记本需要Fn键也打开
-  ; F1 CMD
-  ; F2 VSCODE
-  ; F3 控制面板
+  ; 在按住CapsLock时，可以做些什么事情呢？
+  ; 1. 用于切换输入法
+  ; 2. 用于切换大小写
+  ; 3. 用于切换中英文
+  ; 4. 用于切换布局
+  ; 5. 用于切换屏幕
+  ; 6. 用于切换窗口
+  ; 7. 用于切换桌面
+  ; 8. 用于切换任务栏
+  ; 9. 用于切换任务管理器
+  ; 10. 用于切换文件管理器
+  ; 11. 用于切换浏览器
+  ; 12. 用于切换编辑器
+  ; 13. 用于切换音乐播放器
+  ; 14. 用于切换视频播放器
+  ; 15. 用于切换游戏
+  ; 16. 用于切换虚拟机
+  ; 17. 用于切换远程桌面
+  ; 18. 用于切换远程终端
+  ; 19. 用于切换远程文件管理器
+  ; 20. 用于切换远程浏览器
+  ; 21. 用于切换远程编辑器
+  ; 22. 用于切换远程音乐播放器
+  ; 23. 用于切换远程视频播放器
+  ; 24. 用于切换远程游戏
+  ; 25. 用于切换远程虚拟机
 #HotIf
 
 ; 光标移动控制
@@ -36,7 +58,8 @@ CapsLock & `;::Send "{PgDn}" ; 这里使用`进行转义，跳到下一页
 CapsLock & ,::Send "{Up 5}" ;向上5行
 CapsLock & .::Send "{Down 5}" ;向下5行
 CapsLock & Enter::Send "{End}{Enter}" ;回车到下一行
-CapsLock & BackSpace::Send "^l{BackSpace}" ;删除整行
+CapsLock & BackSpace::Send "{End}+{Home}{BackSpace 2}" ;删除整行
+; 这样操作比较好，因为可以适应不同的编辑器。删除两下是彻底删除这一行，而不是删除到行首。
 
 #HotIf GetKeyState("Shift")
   ~CapsLock & j::Send "1"
@@ -54,6 +77,18 @@ CapsLock & BackSpace::Send "^l{BackSpace}" ;删除整行
   }
   ~CapsLock & BackSpace::Send "{BackSpace}"
 #HotIf
+
+TryRun(command){
+  try
+    Run command
+  catch
+    MsgBox "运行失败"
+}
+; 软件快捷键
+CapsLock & F1::TryRun("cmd")
+CapsLock & F2::TryRun("code")
+CapsLock & F3::TryRun("control")
+CapsLock & F4::TryRun("powershell")
 
 ; 输入框
 ; 自带的输入框太丑了，能不能搞个漂亮一点的
