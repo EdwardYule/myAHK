@@ -12,6 +12,7 @@
   ~CapsLock & `;::Send "+{PgDn}"
   ~CapsLock & ,::Send "+{Up 5}"
   ~CapsLock & .::Send "+{Down 5}"
+  ~CapsLock & BackSpace::Send "{End}+{Home 2}{BackSpace 2}" ;删除整行
   ; TODO 这里有个bug，按住CapsLock，然后按住Alt再放开Alt，会触发Alt键，应该不让触发比较好
 #HotIf
 
@@ -58,7 +59,7 @@ CapsLock & `;::Send "{PgDn}" ; 这里使用`进行转义，跳到下一页
 CapsLock & ,::Send "{Up 5}" ;向上5行
 CapsLock & .::Send "{Down 5}" ;向下5行
 CapsLock & Enter::Send "{End}{Enter}" ;回车到下一行
-CapsLock & BackSpace::Send "{End}+{Home}{BackSpace 2}" ;删除整行
+CapsLock & BackSpace::Send "{End}+{Home}{BackSpace}" ;删除整行
 ; 这样操作比较好，因为可以适应不同的编辑器。删除两下是彻底删除这一行，而不是删除到行首。
 
 #HotIf GetKeyState("Shift")

@@ -40,7 +40,7 @@ SmartMenu.Add "帮助", Help
 
 RCtrl & RAlt::SmartMenu.Show
 RAlt & RCtrl::SmartMenu.Show
-; RAlt & RCtrl::AppsKey ;右键功能触摸板可以两指点击实现，触摸板右下方按压也能实现，感觉没太大必要去做了
+CapsLock & RButton::SmartMenu.Show
 
 ; 控制面板
 ; 清空回收站
