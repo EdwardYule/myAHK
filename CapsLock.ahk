@@ -1,4 +1,7 @@
 #HotIf GetKeyState("Alt")
+  ; TODO 这里有个bug，按住CapsLock，然后按住Alt再放开Alt，会触发Alt键，应该不让触发比较好
+  ; 另外，按住CapsLock和Alt，松开，实际上切换了大小写
+  ; 是不是应该加一个定时器判断？
   ; 先按Alt，再按住大写键时，可实现选择控制
   ~CapsLock & j::Send "+{Left}"
   ~CapsLock & l::Send "+{Right}"
@@ -12,8 +15,13 @@
   ~CapsLock & `;::Send "+{PgDn}"
   ~CapsLock & ,::Send "+{Up 5}"
   ~CapsLock & .::Send "+{Down 5}"
-  ~CapsLock & BackSpace::Send "{End}+{Home 2}{BackSpace 2}" ;删除整行
-  ; TODO 这里有个bug，按住CapsLock，然后按住Alt再放开Alt，会触发Alt键，应该不让触发比较好
+  ~CapsLock & BackSpace::{
+    ; 判断是否在vscode中
+    if WinActive("ahk_exe Code.exe")
+      Send "^l{BackSpace}" ;删除选中的所有行
+    else
+      Send "{End}+{Home 2}{BackSpace 2}" ;删除光标所在整行
+  }
 #HotIf
 
 #HotIf GetKeyState("CapsLock", "T")
@@ -79,12 +87,6 @@ CapsLock & BackSpace::Send "{End}+{Home}{BackSpace}" ;删除整行
   ~CapsLock & BackSpace::Send "{BackSpace}"
 #HotIf
 
-TryRun(command){
-  try
-    Run command
-  catch
-    MsgBox "运行失败"
-}
 ; 软件快捷键
 CapsLock & F1::TryRun("cmd")
 CapsLock & F2::TryRun("code")
