@@ -100,3 +100,23 @@ CapsLock & F4::TryRun("powershell")
 ;   if IB.result = "OK"
 ;     MsgBox(IB.value)
 ; }
+
+; 使用滚轮控制透明度
+CapsLock & WheelDown::{
+  MouseGetPos , , &MouseWin
+  Transparent := WinGetTransparent("A")
+  ; MsgBox(Transparent)
+  WinSetTransColor "0xFFFFFF" " 255", MouseWin
+  WinSetTransColor "Off", MouseWin
+  if (Transparent){
+    WinSetTransColor "0xFFFFFF " Transparent - 15, MouseWin
+  } else if (Transparent = "0"){
+    WinSetTransColor "0xFFFFFF" " 0", MouseWin
+  } Else {
+    WinSetTransColor "0xFFFFFF" " 240", MouseWin
+  }
+}
+CapsLock & WheelUp::{
+    MouseGetPos ,, &MouseWin
+    WinSetTransColor "Off", MouseWin
+}
