@@ -45,7 +45,9 @@ CapsLock & Right::
 #HotIf
 
 ; 窗口层级
-CapsLock & Up::{
+CapsLock & Up::
+CapsLock & MButton::
+{
   WinSetAlwaysOnTop -1, "A"
 }
 CapsLock & Down::{

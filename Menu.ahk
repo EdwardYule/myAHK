@@ -14,14 +14,10 @@ ScreenRuler(Item, *){
 MousePointerCrosshairs(Item, *){
   Send "#!p"
 }
-AlwaysOnTop(Item, *){
-  Send "#^t"
-}
 
 ; 以下是菜单项
 
 PowerToys := Menu()
-PowerToys.Add "置顶", AlwaysOnTop
 PowerToys.Add "OCR", OCRHandler
 PowerToys.Add "屏幕标尺", ScreenRuler
 PowerToys.Add "鼠标指针十字线", MousePointerCrosshairs
