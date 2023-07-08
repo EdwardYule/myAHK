@@ -24,10 +24,6 @@
   }
 #HotIf
 
-#HotIf GetKeyState("CapsLock", "T")
-  ; 在按住CapsLock时，可以做些什么事情呢？
-#HotIf
-
 ; 光标移动控制
 CapsLock & j::Send "{Left}" ;向左
 CapsLock & l::Send "{Right}" ;向右
@@ -60,9 +56,3 @@ CapsLock & BackSpace::Send "{End}+{Home}{BackSpace}" ;删除至行首
   }
   ~CapsLock & BackSpace::Send "{BackSpace}"
 #HotIf
-
-; 软件快捷键
-CapsLock & F1::TryRun("cmd")
-CapsLock & F2::TryRun("code")
-CapsLock & F3::TryRun("control")
-CapsLock & F4::TryRun("powershell")

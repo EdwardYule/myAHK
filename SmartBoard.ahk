@@ -9,8 +9,6 @@
 #Include CapsLock.ahk
 ;Windows相关功能，主要用于窗口调节
 #Include Windows.ahk
-;菜单相关
-#Include Menu.ahk
 
 !+^z::Reload
 
