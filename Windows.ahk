@@ -43,3 +43,11 @@ CapsLock & Right::
     WinSetTransColor "Off", "A"
   }
 #HotIf
+
+; 窗口层级
+CapsLock & Up::{
+  WinSetAlwaysOnTop -1, "A"
+}
+CapsLock & Down::{
+  WinSetAlwaysOnTop 0, "A"
+}
