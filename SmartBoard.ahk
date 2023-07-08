@@ -12,8 +12,8 @@
 #Include Lib.ahk
 ;CapsLock键相关功能，主要负责光标移动，文本选择等文字工作功能
 #Include CapsLock.ahk
-;Win键相关功能，主要用于增强系统相关功能
-#Include Win.ahk
+;Windows相关功能，主要用于窗口调节
+#Include Windows.ahk
 ;菜单相关
 #Include Menu.ahk
 
