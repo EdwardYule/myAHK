@@ -37,7 +37,3 @@ SmartMenu.Add "帮助", Help
 RCtrl & RAlt::SmartMenu.Show
 RAlt & RCtrl::SmartMenu.Show
 CapsLock & RButton::SmartMenu.Show
-
-; 控制面板
-; 清空回收站
-; 便签？
