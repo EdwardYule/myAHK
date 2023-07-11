@@ -52,8 +52,8 @@ Capslock-是一个Capslock键的增强工具，能帮助您提高效率。
 
 详细功能请见图片（图片比较简陋，将就着看吧😂）。
 
-![主要功能](./main.jpg)
-![数字键盘](./numBoard.jpg)
+![主要功能](./assets/main.jpg)
+![数字键盘](./assets/numBoard.jpg)
 
 * 热键设计原则
 
