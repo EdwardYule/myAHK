@@ -1,3 +1,5 @@
+<p align="center"><img width="100" src="./assets/icon.png" alt="Capslock- logo"></p>
+
 # Capslock-(CapsLock Minus)
 
 ## 概述
