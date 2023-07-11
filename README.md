@@ -35,7 +35,7 @@ Capslock-是一个Capslock键的增强工具，能帮助您提高效率。
 
 推荐方法：
 安装AHK2，然后下载该仓库。双击SmartBoard.ahk执行即可。
-如遇开机启动，可将SmartBoard.ahk文件创建快捷方式放入StartUp文件夹。
+如需开机启动，可将SmartBoard.ahk文件创建快捷方式放入StartUp文件夹(打开StartUp文件夹的方法: Win + R, 输入shell:startup)。
 好处是：
 1. 兼容性好，编译exe文件我只有一台电脑，没有经过充分测试。
 2. 软件更新时只需git pull即可。（不使用git的小伙伴可重新下载仓库后覆盖即可）
