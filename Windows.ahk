@@ -10,6 +10,7 @@ CapsLock & Left::
   } Else {
     WinSetTransColor "0xFFFFFF" " 240", "A"
   }
+  WinRedraw "A"
 }
 
 CapsLock & WheelUp::
@@ -21,12 +22,14 @@ CapsLock & Right::
   }else if (Transparent){
     WinSetTransColor "0xFFFFFF " Transparent + 15, "A"
   }
+  WinRedraw "A"
 }
 #HotIf GetKeyState("Alt")
   ~CapsLock & Right::
   ~CapsLock & WheelUp::{
     WinSetTransColor "Off", "A"
   }
+  WinRedraw "A"
 #HotIf
 
 ; 窗口层级
